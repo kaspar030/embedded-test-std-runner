@@ -56,7 +56,12 @@ fn list_tests(test_bin: &str) -> Result<Vec<Trial>> {
                 .expect("test binary ran fine")
             {
                 Some(res) => res,
-                None => return Err(Failed::from("timeout")),
+                None => {
+                    // child hasn't exited yet
+                    child.kill().unwrap();
+                    child.wait().unwrap();
+                    return Err(Failed::from("timeout"));
+                }
             };
 
             if exit_status.success() {
