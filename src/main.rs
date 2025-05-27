@@ -11,9 +11,8 @@ use serde::{Deserialize, Serialize};
 const DEFAULT_TIMEOUT: u32 = 60;
 
 fn main() -> ExitCode {
-    let mut args = std::env::args().skip(1);
-    let test_bin = args.next().unwrap();
-    let mut args = Arguments::from_iter(args);
+    let test_bin = std::env::args().skip(1).next().unwrap();
+    let mut args = Arguments::from_iter(std::env::args().skip(1));
     args.test_threads = Some(1);
 
     let tests = list_tests(&test_bin).unwrap();
