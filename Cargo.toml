@@ -3,9 +3,32 @@ name = "embedded-test-std-runner"
 version = "0.1.0"
 edition = "2024"
 
+authors = ["Kaspar Schleiser <kaspar@schleiser.de>"]
+
+description = "A libtest compatible test runner for embedded-test on std"
+repository = "https://github.com/kaspar030/embedded-test-std-runner"
+homepage = "https://github.com/kaspar030/embedded-test-std-runne"
+license = "Apache-2.0"
+readme = "README.md"
+include = ["src/**/*", "LICENSE", "README.md", "CHANGELOG.md", "!**/tests/**/*"]
+rust-version = "1.85"
+
 [dependencies]
 anyhow = "1.0.97"
 libtest-mimic = "0.8.1"
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.140"
 wait-timeout = "0.2.1"
+
+[package.metadata.release]
+sign-commit = true
+sign-tag = true
+
+pre-release-replacements = [
+  { file = "CHANGELOG.md", search = "\\(#(\\d+)\\)", replace = "([#$1](https://github.com/kaspar030/embedded-test-std-runner/pull/$1))", min = 0 },
+  { file = "CHANGELOG.md", search = "Unreleased", replace = "{{version}}" },
+#  { file = "CHANGELOG.md", search = "\\.\\.\\.HEAD", replace = "...{{tag_name}}", exactly = 1 },
+  { file = "CHANGELOG.md", search = "ReleaseDate", replace = "{{date}}" },
+  { file = "CHANGELOG.md", search = "<!-- next-header -->", replace = "<!-- next-header -->\n\n## [Unreleased] - ReleaseDate", exactly = 1 },
+  { file = "CHANGELOG.md", search = "<!-- next-url -->", replace = "<!-- next-url -->\n[Unreleased]: https://github.com/kaspar030/embedded-test-std-runner/compare/{{tag_name}}...HEAD", exactly = 1 },
+]
