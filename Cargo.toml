@@ -27,7 +27,7 @@ sign-tag = true
 pre-release-replacements = [
   { file = "CHANGELOG.md", search = "\\(#(\\d+)\\)", replace = "([#$1](https://github.com/kaspar030/embedded-test-std-runner/pull/$1))", min = 0 },
   { file = "CHANGELOG.md", search = "Unreleased", replace = "{{version}}" },
-#  { file = "CHANGELOG.md", search = "\\.\\.\\.HEAD", replace = "...{{tag_name}}", exactly = 1 },
+  { file = "CHANGELOG.md", search = "\\.\\.\\.HEAD", replace = "...{{tag_name}}", exactly = 1 },
   { file = "CHANGELOG.md", search = "ReleaseDate", replace = "{{date}}" },
   { file = "CHANGELOG.md", search = "<!-- next-header -->", replace = "<!-- next-header -->\n\n## [Unreleased] - ReleaseDate", exactly = 1 },
   { file = "CHANGELOG.md", search = "<!-- next-url -->", replace = "<!-- next-url -->\n[Unreleased]: https://github.com/kaspar030/embedded-test-std-runner/compare/{{tag_name}}...HEAD", exactly = 1 },
