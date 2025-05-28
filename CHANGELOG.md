@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- next-header -->
 
-## [Unreleased]
+## [Unreleased] - ReleaseDate
 
 - add release workflow
 
@@ -16,4 +16,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - initial release
 
 <!-- next-url -->
+[Unreleased]: https://github.com/kaspar030/embedded-test-std-runner/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/kaspar030/embedded-test-std-runner/releases/tag/v0.1.0
