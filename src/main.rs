@@ -4,7 +4,7 @@ use std::{
     time::Duration,
 };
 
-use anyhow::Result;
+use anyhow::{Result, anyhow};
 use libtest_mimic::{Arguments, Failed, Trial};
 use serde::{Deserialize, Serialize};
 
@@ -94,6 +94,12 @@ fn list_tests(test_bin: &str) -> Result<Vec<Trial>> {
     }
 
     let output = Command::new(test_bin).arg("list").output()?;
+    if output.status.code() != Some(0) {
+        return Err(anyhow!(
+            "test binary exited with non-zero exit code while getting test list"
+        ));
+    }
+
     let mut tests: Option<Tests> = None;
     for line in output.stdout.lines() {
         let line = line?;
