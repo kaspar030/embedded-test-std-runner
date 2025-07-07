@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - ReleaseDate
 
+### Added
+
+- feat: catch testee error while getting test list (#2)
 - add release workflow
 
 ## [0.1.0] - 2025-05-28
