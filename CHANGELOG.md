@@ -9,9 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - ReleaseDate
 
+## [0.1.1] - 2025-07-10
+
 ### Added
 
-- feat: catch testee error while getting test list (#2)
+- feat: catch testee error while getting test list ([#2](https://github.com/kaspar030/embedded-test-std-runner/pull/2))
 - add release workflow
 
 ## [0.1.0] - 2025-05-28
@@ -19,5 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - initial release
 
 <!-- next-url -->
-[Unreleased]: https://github.com/kaspar030/embedded-test-std-runner/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/kaspar030/embedded-test-std-runner/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/kaspar030/embedded-test-std-runner/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/kaspar030/embedded-test-std-runner/releases/tag/v0.1.0
